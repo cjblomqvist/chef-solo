@@ -49,12 +49,19 @@ end
 
 package "python" do
   action :install
-  print "TEST1"
 end
+
+package "curl" do
+  action :install
+  not_if "whereis webmin"
+end
+
+
+
 
 if ::File.directory?('/usr/share/webmin')
   print "TEST2"
-  package "python" do
+  package "ruby" do
     action :install
   end
 end

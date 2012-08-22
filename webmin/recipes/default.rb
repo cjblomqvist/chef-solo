@@ -17,8 +17,7 @@
 # limitations under the License.
 #
 
-# require 'chef/shell_out'
-
+# Install packages webmin depends on
 package "perl" do
   action :install
 end
@@ -47,6 +46,7 @@ package "apt-show-versions" do
   action :install
 end
 
+# Add repositories for webmin
 apt_repository "webmin1" do
   uri "http://download.webmin.com/download/repository"
   distribution "sarge"
@@ -63,33 +63,10 @@ apt_repository "webmin2" do
   action :add
 end
 
+# Reload package list through 'apt-get update'
 include_recipe "apt::default"
 
+# Install webmin
 package "webmin" do
   action :install
 end
-
-
-
-
-
-
-
-#template "/etc/apt/sources.list.d/webmin#1-source.list" do
-#  notifies :run, resources(:execute => "apt-get update"), :immediately
-#end
-
-
-
-
-
-
-
-
-#template "/tmp/somefile" do
-#  mode "0644"
-#  source "somefile.erb"
-#  not_if do
-#    File.directory?("/usr/share/webmin")
-#  end
-#end

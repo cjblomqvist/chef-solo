@@ -1,6 +1,14 @@
 {
-    "run_list": [
-        "recipe[apt]"
-      , "recipe[webmin]"
+    "samba": {
+        "workgroup": "WORKGROUP"
+      , "hosts_allow": ""
+      , "server_string": "%h server (Samba, Ubuntu)"
+      , "log_dir": "/var/log/samba/log.%m"
+      , "interfaces": ""
+    }
+  , "run_list": [
+        "recipe[webmin]"
+      , "recipe[samba::server]"
+      , "recipe[htpc]"
     ]
 }

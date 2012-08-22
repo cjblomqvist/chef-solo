@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-require 'chef/shell_out'
+# require 'chef/shell_out'
 
 package "perl" do
   action :install

@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-### default['build_essential']['compiletime'] = false
+default['webmin']['compiletime'] = false

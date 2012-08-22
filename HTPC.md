@@ -22,7 +22,6 @@ sudo apt-get install ruby ruby-dev libopenssl-ruby rdoc ri irb ssl-cert
 rvmsudo gem install chef --no-ri --no-rdoc
 ```
 
-
 ## 4. Setup Chef Solo 
 ```
 nano solo.rb
@@ -41,13 +40,12 @@ tar -C /tmp -xvf /tmp/master
 sudo mv /tmp/opscode-cookbooks-chef-client-* /var/chef-solo/cookbooks/chef-client
 ```
 
-
-5. Run Chef Solo
+## 6. Run Chef Solo
 ```
 rvmsudo chef-solo -c ~/solo.rb -j ~/node.json -r https://github.com/cjblomqvist/chef-solo/tarball/master
 ```
 
-
+## Old
 
 
 

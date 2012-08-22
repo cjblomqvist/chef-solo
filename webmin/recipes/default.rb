@@ -68,12 +68,10 @@ end
 =end
 
 package "curl" do
-  action :install
   not_if {true}
 end
 
 package "build-essential" do
-  action :install
   only_if {true}
 end
 

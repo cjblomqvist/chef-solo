@@ -39,12 +39,12 @@ nano node.json
 
 ## 5. Run Chef Solo - including downloading latest version of cookbooks from github
 ```
-sudo rm -r /var/chef-solo/cookbooks
+sudo rm -r /var/chef-solo
 wget https://github.com/cjblomqvist/chef-solo/tarball/master -P /tmp/
 tar -C /tmp -xvf /tmp/master
 sudo rm /tmp/master
-sudo mv /tmp/cjblomqvist-chef-solo-* /var/chef-solo/cookbooks 
-rvmsudo chef-solo -c /var/chef-solo/cookbooks/solo.rb -j /var/chef-solo/cookbooks/node.json
+sudo mv /tmp/cjblomqvist-chef-solo-* /var/chef-solo 
+rvmsudo chef-solo -c /var/chef-solo/solo.rb -j /var/chef-solo/node.json
 
 ```
 

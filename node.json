@@ -5,7 +5,7 @@
       , "server_string": "%h server (Samba, Ubuntu)"
       , "log_dir": "/var/log/samba/log.%m"
       , "interfaces": ""
-      , "passdb_backend": "ldapsam"
+      , "passdb_backend": "tdbsam"
     }
   , "run_list": [
         "recipe[webmin]"

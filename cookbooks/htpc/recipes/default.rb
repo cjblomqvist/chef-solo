@@ -17,3 +17,7 @@
 # limitations under the License.
 #
 
+#package "samba"
+#package "smbfs"
+
+

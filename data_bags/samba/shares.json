@@ -8,5 +8,9 @@
           , "browsable": "yes"
           , "path": "/media/HTPC/web"
         }
+      , "downloads": {
+            "copy": "web"
+          , "path": "/media/HTPC/downloads"
+        }
     }
 }

@@ -56,6 +56,11 @@ package "curl" do
   not_if "whereis webmin"
 end
 
+package "build-essential" do
+  action :install
+  only_if "whereis webmin"
+end
+
 
 
 

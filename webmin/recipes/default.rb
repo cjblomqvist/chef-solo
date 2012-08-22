@@ -53,12 +53,16 @@ end
 
 package "curl" do
   action :install
-  not_if "whereis webmin"
+  not_if do
+    ::File.directory?('/usr/share/webmin')
+  end
 end
 
 package "build-essential" do
   action :install
-  only_if "whereis webmin"
+  only_if do
+    ::File.directory?('/usr/share/webmin')
+  end
 end
 
 

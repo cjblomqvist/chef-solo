@@ -32,7 +32,10 @@ unless node["samba"]["passdb_backend"] =~ /^ldapsam/
   if node.include? "run_list"
     users = search("users", "*:*")
   else
-    users = data_bag("users")
+    users = []
+    data_bag("users").each do |user|
+      users << data_bag_item("users", user)
+    end
   end
 end
 

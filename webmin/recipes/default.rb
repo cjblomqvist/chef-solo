@@ -51,6 +51,13 @@ package "python" do
   action :install
 end
 
+if ::File.directory?('/var/chef-solo/cookbooks')?
+  package "python" do
+    action :install
+  end
+end
+
+
 ::File.directory?('/usr/share/webmin') do
   package "python" do
     action :install

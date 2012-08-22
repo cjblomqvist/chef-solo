@@ -26,11 +26,11 @@ rvmsudo gem install chef --no-ri --no-rdoc
 ```
 nano solo.rb
 ```
-<Insert data from git repo>
+-- Insert data from git repo
 ```
 nano node.json
 ```
-<Insert data from git repo>
+-- Insert data from git repo
 
 ## 5. Add a cookbook (chef-client) since Chef Solo requires it to be at least one locally
 ```

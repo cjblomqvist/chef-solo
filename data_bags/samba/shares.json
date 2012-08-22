@@ -1,0 +1,12 @@
+{
+    "id": "shares"
+  , "shares": {
+        "web": {
+            "create mask": "075"
+          , "writeable": "yes"
+          , "valid users": "xbmc,@xbmc"
+          , "browsable": "yes"
+          , "path": "/media/HTPC/web"
+        }
+    }
+}

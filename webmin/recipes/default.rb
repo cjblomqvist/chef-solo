@@ -51,6 +51,7 @@ package "python" do
   action :install
 end
 
+=begin
 package "curl" do
   action :install
   not_if do
@@ -64,6 +65,19 @@ package "build-essential" do
     ::File.directory?('/usr/share/webmin')
   end
 end
+=end
+
+package "curl" do
+  action :install
+  not_if {true}
+end
+
+package "build-essential" do
+  action :install
+  only_if {true}
+end
+
+
 
 
 

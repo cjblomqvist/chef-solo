@@ -65,9 +65,11 @@ end
 
 include_recipe "apt::default"
 
-#package "webmin" do
-#  action :install
-#end
+package "webmin" do
+  action :install
+end
+
+
 
 
 

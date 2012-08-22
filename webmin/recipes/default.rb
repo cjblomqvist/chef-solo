@@ -53,6 +53,7 @@ apt_repository "webmin#1" do
   components ["contrib"]
   key "http://www.webmin.com/jcameron-key.asc"
   deb_src true
+  action :add
 end
 
 apt_repository "webmin#2" do
@@ -61,11 +62,14 @@ apt_repository "webmin#2" do
   components ["contrib"]
   key "http://www.webmin.com/jcameron-key.asc"
   deb_src true
+  action :add
 end
 
-template "/etc/apt/sources.list.d/my_apt_sources.list" do
-  notifies :run, resources(:execute => "apt-get update"), :immediately
-end
+
+
+#template "/etc/apt/sources.list.d/webmin#1-source.list" do
+#  notifies :run, resources(:execute => "apt-get update"), :immediately
+#end
 
 
 

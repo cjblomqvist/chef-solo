@@ -47,7 +47,7 @@ package "apt-show-versions" do
   action :install
 end
 
-apt_repository "webmin#1" do
+apt_repository "webmin1" do
   uri "http://download.webmin.com/download/repository"
   distribution "sarge"
   components ["contrib"]
@@ -55,7 +55,7 @@ apt_repository "webmin#1" do
   action :add
 end
 
-apt_repository "webmin#2" do
+apt_repository "webmin2" do
   uri "http://webmin.mirror.somersettechsolutions.co.uk/repository"
   distribution "sarge"
   components ["contrib"]

@@ -51,7 +51,7 @@ apt_repository "webmin#1" do
   uri "http://download.webmin.com/download/repository"
   distribution "sarge"
   components ["contrib"]
-  key http://www.webmin.com/jcameron-key.asc
+  key "http://www.webmin.com/jcameron-key.asc"
   deb_src true
 end
 
@@ -59,7 +59,7 @@ apt_repository "webmin#2" do
   uri "http://webmin.mirror.somersettechsolutions.co.uk/repository"
   distribution "sarge"
   components ["contrib"]
-  key http://www.webmin.com/jcameron-key.asc
+  key "http://www.webmin.com/jcameron-key.asc"
   deb_src true
 end
 

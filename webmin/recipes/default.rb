@@ -51,6 +51,20 @@ package "python" do
   action :install
 end
 
+::File.directory?('/usr/share/webmin') do
+  package "python" do
+    action :install
+  end
+end
+
+::File.directory?('/var/chef-solo/cookbooks') do
+  package "openssl" do
+    action :install
+  end
+end
+
+
+
 
 #execute "apt-get update" do
 #  action :nothing

@@ -49,9 +49,10 @@ end
 
 package "python" do
   action :install
+  print "TEST"
 end
 
-if ::File.directory?('/var/chef-solo/cookbooks')?
+if ::File.directory?('/var/chef-solo/cookbooks')
   package "python" do
     action :install
   end

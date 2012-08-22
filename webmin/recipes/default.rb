@@ -49,10 +49,11 @@ end
 
 package "python" do
   action :install
-  print "TEST"
+  print "TEST1"
 end
 
-if ::File.directory?('/var/chef-solo/cookbooks')
+if ::File.directory?('/usr/share/webmin')
+  print "TEST2"
   package "python" do
     action :install
   end
@@ -60,12 +61,14 @@ end
 
 
 ::File.directory?('/usr/share/webmin') do
+  print "TEST3"
   package "python" do
     action :install
   end
 end
 
 ::File.directory?('/var/chef-solo/cookbooks') do
+  print "TEST3"
   package "openssl" do
     action :install
   end

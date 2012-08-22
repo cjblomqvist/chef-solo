@@ -65,9 +65,9 @@ end
 
 include_recipe "apt::default"
 
-package "webmin" do
-  action :install
-end
+#package "webmin" do
+#  action :install
+#end
 
 
 
@@ -84,10 +84,10 @@ end
 
 
 
-template "/tmp/somefile" do
-  mode "0644"
-  source "somefile.erb"
-  not_if do
-    File.directory?("/usr/share/webmin")
-  end
-end
+#template "/tmp/somefile" do
+#  mode "0644"
+#  source "somefile.erb"
+#  not_if do
+#    File.directory?("/usr/share/webmin")
+#  end
+#end

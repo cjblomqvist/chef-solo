@@ -7,9 +7,20 @@
       , "interfaces": ""
       , "passdb_backend": "tdbsam"
     }
+  , "transmission": {
+        "download_dir": "/media/HTPC/downloads/Movies"
+      , "incomplete_dir": "/media/HTPC/download-part"
+      , "incomplete_dir_enabled": "true"
+      , "rpc_username": "xbmc"
+      , "rpc_password": "{f0fcfb165a79850b950c0808439c4decd0d5bf3brl0lIldB"
+      , "speed_limit_down": "1000"
+      , "speed_limit_up": "250"
+      , "speed_limit_up_enabled": "true"
+    }
   , "run_list": [
         "recipe[webmin]"
       , "recipe[samba::server]"
+      , "recipe[transmission]"
       , "recipe[htpc]"
     ]
 }

@@ -47,68 +47,37 @@ package "apt-show-versions" do
   action :install
 end
 
-package "python" do
-  action :install
+apt_repository "webmin#1" do
+  uri "http://download.webmin.com/download/repository"
+  distribution "sarge"
+  components ["contrib"]
+  key http://www.webmin.com/jcameron-key.asc
+  deb_src true
 end
 
-=begin
-package "curl" do
-  action :install
+apt_repository "webmin#2" do
+  uri "http://webmin.mirror.somersettechsolutions.co.uk/repository"
+  distribution "sarge"
+  components ["contrib"]
+  key http://www.webmin.com/jcameron-key.asc
+  deb_src true
+end
+
+template "/etc/apt/sources.list.d/my_apt_sources.list" do
+  notifies :run, resources(:execute => "apt-get update"), :immediately
+end
+
+
+
+
+
+
+
+
+template "/tmp/somefile" do
+  mode "0644"
+  source "somefile.erb"
   not_if do
-    ::File.directory?('/usr/share/webmin')
+    File.directory?("/usr/share/webmin")
   end
 end
-
-package "build-essential" do
-  action :install
-  only_if do
-    ::File.directory?('/usr/share/webmin')
-  end
-end
-=end
-
-package "curl" do
-  not_if {true}
-end
-
-package "build-essential" do
-  only_if {true}
-end
-
-
-
-
-
-
-if ::File.directory?('/usr/share/webmin')
-  print "TEST2"
-  package "ruby" do
-    action :install
-  end
-end
-
-
-::File.directory?('/usr/share/webmin') do
-  print "TEST3"
-  package "python" do
-    action :install
-  end
-end
-
-::File.directory?('/var/chef-solo/cookbooks') do
-  print "TEST3"
-  package "openssl" do
-    action :install
-  end
-end
-
-
-
-
-#execute "apt-get update" do
-#  action :nothing
-#  ::File.directory?('/usr/share/webmin') do
-#    
-#  end
-#end
-

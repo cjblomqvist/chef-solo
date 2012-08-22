@@ -52,7 +52,6 @@ apt_repository "webmin#1" do
   distribution "sarge"
   components ["contrib"]
   key "http://www.webmin.com/jcameron-key.asc"
-  deb_src true
   action :add
 end
 
@@ -61,9 +60,16 @@ apt_repository "webmin#2" do
   distribution "sarge"
   components ["contrib"]
   key "http://www.webmin.com/jcameron-key.asc"
-  deb_src true
   action :add
 end
+
+include_recipe "apt::default"
+
+package "webmin" do
+  action :install
+end
+
+
 
 
 

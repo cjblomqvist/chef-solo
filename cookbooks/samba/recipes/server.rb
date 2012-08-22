@@ -29,7 +29,11 @@ shares["shares"].each do |k,v|
 end
 
 unless node["samba"]["passdb_backend"] =~ /^ldapsam/
-  users = search("users", "*:*")
+  if node.include? "run_list"
+    users = search("users", "*:*")
+  else
+    users = data_bag_item("users")
+  end
 end
 
 package value_for_platform(

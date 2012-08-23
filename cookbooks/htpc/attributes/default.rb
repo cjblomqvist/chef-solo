@@ -21,3 +21,6 @@
 ["programs", "video", "music", "pictures", "files"].each do |name|
   default['xbmc']['sources'][name] = Hash.new
 end
+
+# XBMC Advanced settings
+default["xbmc"]["advancedsettings"] = Hash.new

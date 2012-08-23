@@ -68,7 +68,14 @@ end
 # ==============================================================
 # Configure XBMC
 # ==============================================================
+
+# Setup sources
 template node["xbmc"]["path"] + ".xbmc/userdata/sources.xml" do
   source "sources.xml.erb"
 end
 
+# Setup configuration for advanced settings
+## First install gem package xml-simple which is needed
+gem_package "xml-simple"
+
+## Then set up the actual file

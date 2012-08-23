@@ -45,6 +45,11 @@
                 }
             }
         }
+      , "advancedsettings": {
+            "useddsfanart": {
+                "content": "true"
+            }
+        }
     }
   , "run_list": [
         "recipe[webmin]"

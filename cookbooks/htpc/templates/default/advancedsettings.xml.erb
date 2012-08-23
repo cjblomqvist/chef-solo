@@ -1,0 +1,4 @@
+<%- require "xmlsimple" %>
+<advancedsettings>
+  <%= XmlSimple.xml_out( node["xbmc"]["advancedsettings"], { "ForceContent" = > true } ) %>
+</advancedsettings>

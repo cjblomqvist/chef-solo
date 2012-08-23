@@ -52,7 +52,36 @@
             }
         }
     }
+  , "flexget": {
+        "config": {
+            "feeds": {
+                "tv-shows": {
+                    "transmission": {
+                        "host": "localhost"
+                      , "post": 9091
+                      , "removewhendone": true
+                      , "username": "xbmc"
+                      , "password": "detvarkul"
+                      , "ratio": 5.0
+                      , "addpaused": "No"
+                    }
+                  , "regexp": {
+                        "accept": [
+                            "720p"
+                        ]
+                    }
+                  , "set": {
+                        "path": "/media/HTPC/downloads/TV Shows"
+                    }
+                  , "rss": "http://www.tvtorrents.com/mytaggedRSS?digest=a8d17e2a766cf028f8b2f6cc14a3f072d5706e4f&hash=1a207338004e6e567d5c0f0bafe0394ecf582aa8&include=(720p)&exclude=(Season.*Complete)&fname=true"
+                }
+            }
+        }
+    }
   , "run_list": [
-       "recipe[htpc]"
+        "recipe[webmin]"
+      , "recipe[htpc]"
+      , "recipe[samba::server]"
+      , "recipe[transmission]"
     ]
 }

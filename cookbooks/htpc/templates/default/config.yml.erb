@@ -1,0 +1,5 @@
+<%- require 'yaml' %>
+<%- 
+# Yes, below is a very hacky way of doing this, but since the returning objects from node after doing to_hash is really a Mash, it screw things up royally and after trying to fix it for a bunch of hours (like 6+) I decided to do it the "easy", buy hacky way
+%>
+<%= node["flexget"]["config"].to_hash.to_yaml.to_s.gsub(/!ruby\/hash:Mash/, '').lines.to_a[1..-1].join %>

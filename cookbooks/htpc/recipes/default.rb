@@ -83,3 +83,35 @@ gem_package "xml-simple"
 template node["xbmc"]["path"] + ".xbmc/userdata/advancedsettings.xml" do
   source "advancedsettings.xml.erb"
 end
+
+# ==============================================================
+# Install and configure FlexGet
+# ==============================================================
+
+# First, we'll need the python-pip and the python-dev packages
+package "python-pip"
+package "python-dev"
+
+# Install FlexGet using pip
+execute "pip" do
+  command "pip install flexget"
+end
+
+# Setup the config file
+## First, setup the directory where to put it
+directory "/home/xbmc/.flexget" do
+  recursive true
+  owner "xbmc"
+  group "xbmc"
+end
+
+## Then set up the actual file
+template "/home/xbmc/.flexget/config.yml" do
+  source "config.yml.erb"
+end
+
+## Then setup cron job for FlexGet 
+crontab "flexget-crontab" do 
+  username :root 
+  filename "crontab.erb"
+end

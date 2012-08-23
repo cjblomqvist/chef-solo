@@ -71,8 +71,10 @@ end
 # ==============================================================
 
 # Setup sources
-template node["xbmc"]["path"] + ".xbmc/userdata/sources.xml" do
+template node["xbmc"]["path"] + "/userdata/sources.xml" do
   source "sources.xml.erb"
+  owner node["xbmc"]["owner"]
+  group node["xbmc"]["group"]
 end
 
 # Setup configuration for advanced settings
@@ -80,8 +82,10 @@ end
 gem_package "xml-simple"
 
 ## Then set up the actual file
-template node["xbmc"]["path"] + ".xbmc/userdata/advancedsettings.xml" do
+template node["xbmc"]["path"] + "/userdata/advancedsettings.xml" do
   source "advancedsettings.xml.erb"
+  owner node["xbmc"]["owner"]
+  group node["xbmc"]["group"]
 end
 
 # ==============================================================
@@ -99,15 +103,17 @@ end
 
 # Setup the config file
 ## First, setup the directory where to put it
-directory "/home/xbmc/.flexget" do
+directory node["flexget"]["directory"] do
   recursive true
-  owner "xbmc"
-  group "xbmc"
+  owner node["flexget"]["owner"]
+  group node["flexget"]["group"]
 end
 
 ## Then set up the actual file
-template "/home/xbmc/.flexget/config.yml" do
+template node["flexget"]["directory"] + "/config.yml" do
   source "config.yml.erb"
+  owner node["flexget"]["owner"]
+  group node["flexget"]["group"]
 end
 
 ## Then setup cron job for FlexGet 

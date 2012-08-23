@@ -29,7 +29,9 @@
         }
     }
   , "xbmc": {
-        "path": "/home/xbmc/"
+        "path": "/home/xbmc/.xbmc"
+      , "owner": "xbmc"
+      , "group": "xbmc"
       , "sources": {
             "music": {
                 "Music": {
@@ -53,7 +55,10 @@
         }
     }
   , "flexget": {
-        "config": {
+        "owner": "xbmc"
+      , "group": "xbmc"
+      , "directory": "/home/xbmc/.flexget"
+      , "config": {
             "feeds": {
                 "tv-shows": {
                     "transmission": {

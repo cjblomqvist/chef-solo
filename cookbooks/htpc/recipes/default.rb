@@ -52,7 +52,7 @@ apt_repository "mongodb" do
   uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
   distribution "dist"
   components ["10gen"]
-  key "keyserver.ubuntu.com"
-  key_server "7F0CEB10"
+  key_server "keyserver.ubuntu.com"
+  key "7F0CEB10"
   action :add
 end

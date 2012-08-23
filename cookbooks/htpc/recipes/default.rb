@@ -21,7 +21,7 @@ node["volumes"].each do |vol_name, vol|
   mount vol["mount_point"] do
     device      vol["device"]
     fstype      vol["fstype"]
-    fstype      vol["pass"]
+    pass        vol["pass"]
     action      [:mount, :enable]
   end
 end

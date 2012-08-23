@@ -20,8 +20,10 @@
       , "group": "xbmc"
     }
   , "volumes": {
-        "mount_point": "/media/HTPC"
-      , "device": "/dev/sda3"
+        "HTPC": {
+            "mount_point": "/media"
+          , "device": "/dev/sda3"
+        }
     }
   , "run_list": [
         "recipe[webmin]"

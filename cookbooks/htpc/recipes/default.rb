@@ -17,6 +17,13 @@
 # limitations under the License.
 #
 
+
+
+
+# mkdir /media/HTPC
+# mount /dev/sda3 /media/HTPC
+
+
 #package "samba"
 #package "smbfs"
 

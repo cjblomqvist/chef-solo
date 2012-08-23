@@ -22,7 +22,7 @@ node["volumes"].each do |vol_name, vol|
     device      vol["device"]
     fstype      vol["fstype"]
     not_if do
-      File.Directory? vol["mount_point"]
+      File.directory? vol["mount_point"]
     end
     action      [:mount, :enable]
   end

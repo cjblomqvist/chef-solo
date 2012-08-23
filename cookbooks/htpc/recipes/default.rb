@@ -17,11 +17,28 @@
 # limitations under the License.
 #
 
+node["volumes"].each do |vol_name, vol|
+  mount vol["mount_point"] do
+    device      vol["device"]
+    fstype      vol["fstype"]
+    not_if do
+      File.Directory? vol["mount_point"]
+    end
+    action      [:mount, :enable]
+  end
+end
 
 
 
-# mkdir /media/HTPC
-# mount /dev/sda3 /media/HTPC
+
+
+#, "volumes": {
+#        "HTPC": {
+#            "mount_point": "/media"
+#          , "device": "/dev/sda3"
+#        }
+#    }
+  
 
 
 #package "samba"

@@ -21,15 +21,15 @@
     }
   , "volumes": {
         "HTPC": {
-            "mount_point": "/media"
+            "mount_point": "/media/HTPC"
           , "device": "/dev/sda3"
+          , "fstype": "ntfs"
         }
     }
   , "run_list": [
         "recipe[webmin]"
       , "recipe[samba::server]"
       , "recipe[transmission]"
-      , "recipe[volumes::mount]"
       , "recipe[htpc]"
     ]
 }

@@ -1,0 +1,35 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>Movies</name>
+            <path pathversion="1">/media/HTPC/downloads/Movies/</path>
+        </source>
+        <source>
+            <name>TV Shows</name>
+            <path pathversion="1">/media/HTPC/downloads/TV Shows/</path>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+        <%- node["xbmc"]["sources"]["music"].each do |name, path| %>
+        <source>
+            <name><%= name %>Music</name>
+            <path pathversion="1"><%= path %></path>
+        </source>
+        <%- end %>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+        <source>
+            <name>Pictures</name>
+            <path pathversion="1">/home/xbmc/Pictures/</path>
+        </source>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+    </files>
+</sources>

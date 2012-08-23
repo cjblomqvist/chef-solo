@@ -28,12 +28,37 @@
           , "pass": 0
         }
     }
+  , "xbmc": {
+        "path": "~/"
+      , "sources": {
+            "music": {
+                "Music": {
+                    "path": "/media/HTPC/downloads/Music"
+                }
+            }
+          , "video": {
+                "Movies": {
+                    "path": "/media/HTPC/downloads/Movies"
+                }
+              , "TV Shows": {
+                    "path": "/media/HTPC/downloads/TV Shows"
+                }
+            }
+        }
+    }
   , "run_list": [
         "recipe[webmin]"
       , "recipe[htpc]"
       , "recipe[samba::server]"
       , "recipe[transmission]"
-//      , "recipe[mongodb::10gen_repo]"
-//      , "recipe[mongodb]"
     ]
 }
+
+
+
+<%- node["xbmc"]["sources"]["music"].each do |name, path| %>
+        <source>
+            <name><%= name %>Music</name>
+            <path pathversion="1"><%= path %></path>
+        </source>
+        <%- end %>

@@ -61,6 +61,14 @@ end
 
 package "mongodb-10gen"
 
-service "mongo"
-  action :start :enable
+service "mongodb" do
+  action [:start, :enable]
 end
+
+# ==============================================================
+# Configure XBMC
+# ==============================================================
+template node["xbmc"]["path"] + ".xbmc/userdata/sources.xml" do
+  source "sources.xml.erb"
+end
+

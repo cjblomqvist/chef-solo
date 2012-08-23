@@ -28,14 +28,20 @@
 #  end
 #end
 
-mount "/media/HTPC" do
-  device      "/dev/sda3"
-  fstype      "ntfs"
+directory "/media/HTPC" do
   not_if do
     File.directory? "/media/HTPC"
   end
-  action      [:mount, :enable]
 end
+
+#mount "/media/HTPC" do
+#  device      "/dev/sda3"
+#  fstype      "ntfs"
+#  only_if do
+#    Dir["/media/HTPC" + "/*"].empty?
+#  end
+#  action      [:mount, :enable]
+#end
 
 
 

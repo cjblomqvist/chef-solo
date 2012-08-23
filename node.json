@@ -28,8 +28,8 @@
     }
   , "run_list": [
         "recipe[webmin]"
+      , "recipe[htpc]"
       , "recipe[samba::server]"
       , "recipe[transmission]"
-      , "recipe[htpc]"
     ]
 }

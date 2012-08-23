@@ -17,25 +17,32 @@
 # limitations under the License.
 #
 
+# ==============================================================
+# Mount all drives specified in attributes and add them to /etc/fstab
+# ==============================================================
 node["volumes"].each do |vol_name, vol|
   mount vol["mount_point"] do
     device      vol["device"]
     fstype      vol["fstype"]
     pass        vol["pass"]
+    if vol.include? "options"
+      options    vol["options"]
+    end
     action      [:mount, :enable]
   end
 end
 
-#, "volumes": {
-#        "HTPC": {
-#            "mount_point": "/media"
-#          , "device": "/dev/sda3"
-#        }
-#    }
-  
+# ==============================================================
+# Install Node
+# ==============================================================
 
+# Add package to make sure add-apt-repository exists
+package python-software-properties
 
-#package "samba"
-#package "smbfs"
+# Add repository for node
+ppa "chris-lea/node.js"
+
+package nodejs
+package npm
 
 

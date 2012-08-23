@@ -24,6 +24,7 @@
             "mount_point": "/media/HTPC"
           , "device": "/dev/sda3"
           , "fstype": "ntfs"
+          , "options" "uid=xbmc,gid=xbmc"
           , "pass": 0
         }
     }

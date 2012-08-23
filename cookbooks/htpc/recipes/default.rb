@@ -45,14 +45,3 @@ ppa "chris-lea/node.js"
 package "nodejs"
 package "npm"
 
-# ==============================================================
-# Add package repo for mongodb (seems like the mongodb cookbook doesn't handle this itself)
-# ==============================================================
-apt_repository "mongodb" do
-  uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
-  distribution "dist"
-  components ["10gen"]
-  keyserver "keyserver.ubuntu.com"
-  key "7F0CEB10"
-  action :add
-end

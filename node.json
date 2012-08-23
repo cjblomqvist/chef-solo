@@ -33,6 +33,7 @@
       , "recipe[htpc]"
       , "recipe[samba::server]"
       , "recipe[transmission]"
+      , "recipe[mongodb::10gen_repo]"
       , "recipe[mongodb]"
     ]
 }

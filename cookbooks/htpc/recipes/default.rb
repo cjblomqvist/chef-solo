@@ -17,36 +17,18 @@
 # limitations under the License.
 #
 
-#node["volumes"].each do |vol_name, vol|
-#  mount vol["mount_point"] do
-#    device      vol["device"]
-#    fstype      vol["fstype"]
-#    not_if do
-#      File.directory? vol["mount_point"]
-#    end
-#    action      [:mount, :enable]
-#  end
-#end
-
-directory "/media/HTPC" do
-  recursive   true
-  owner       "xbmc"
-  group       "xbmc"
-  not_if do
-    File.directory? "/media/HTPC"
+node["volumes"].each do |vol_name, vol|
+  directory vol["mount_point"] do
+    recursive   true
+    owner       vol["owner"]
+    group       vol["group"]
+  end
+  mount vol["mount_point"] do
+    device      vol["device"]
+    fstype      vol["fstype"]
+    action      [:mount, :enable]
   end
 end
-
-mount "/media/HTPC" do
-  device      "/dev/sda3"
-  fstype      "ntfs"
-  only_if do
-    Dir["/media/HTPC" + "/*"].empty?
-  end
-  action      [:mount, :enable]
-end
-
-
 
 #, "volumes": {
 #        "HTPC": {

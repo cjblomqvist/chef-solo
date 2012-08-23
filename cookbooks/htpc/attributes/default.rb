@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: webmin
+# Cookbook Name:: htpc
 # Attributes:: default
 #
 # Copyright 2008-2012, Opscode, Inc.
@@ -23,4 +23,14 @@
 end
 
 # XBMC Advanced settings
-default["xbmc"]["advancedsettings"] = Hash.new
+default["xbmc"]["advancedsettings"] = {
+  "useddsfanart" => "true",
+  "cputempcommand" => "cputemp",
+  "gputempcommand" => "gputemp",
+  "samba" => {
+    "clienttimeout" => "30"
+  },
+  "network" => {
+    "disableipv6" => "true"
+  }
+}

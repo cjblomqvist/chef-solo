@@ -1,4 +1,7 @@
-<%- require "xmlsimple" %>
-<advancedsettings>
-  <%= XmlSimple.xml_out( node["xbmc"]["advancedsettings"], { "ForceContent" = > true } ) %>
-</advancedsettings>
+<%- 
+require "xmlsimple" 
+
+output = ''
+( REXML::Document.new XmlSimple.xml_out( node["xbmc"]["advancedsettings"].to_hash, 'AttrPrefix' => true, 'RootName' => 'advancedsettings' ) ).write(output)
+%>
+<%= output %>

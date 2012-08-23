@@ -79,6 +79,6 @@ end
 gem_package "xml-simple"
 
 ## Then set up the actual file
-template node["xbmc"]["path"] + "xbmc/userdata/advancedsettings.xml" do
-  source "advancedsettings.xml.erc"
+template node["xbmc"]["path"] + ".xbmc/userdata/advancedsettings.xml" do
+  source "advancedsettings.xml.erb"
 end

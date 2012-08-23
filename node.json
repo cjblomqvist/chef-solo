@@ -46,15 +46,13 @@
             }
         }
       , "advancedsettings": {
-            "useddsfanart": {
-                "content": "true"
+            "gui": {
+                "algorithmdirtyregions": "1"
+              , "nofliptimeout": "0"
             }
         }
     }
   , "run_list": [
-        "recipe[webmin]"
-      , "recipe[htpc]"
-      , "recipe[samba::server]"
-      , "recipe[transmission]"
+       "recipe[htpc]"
     ]
 }

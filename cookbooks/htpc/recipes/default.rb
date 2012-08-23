@@ -17,18 +17,25 @@
 # limitations under the License.
 #
 
-node["volumes"].each do |vol_name, vol|
-  mount vol["mount_point"] do
-    device      vol["device"]
-    fstype      vol["fstype"]
-    not_if do
-      File.directory? vol["mount_point"]
-    end
-    action      [:mount, :enable]
+#node["volumes"].each do |vol_name, vol|
+#  mount vol["mount_point"] do
+#    device      vol["device"]
+#    fstype      vol["fstype"]
+#    not_if do
+#      File.directory? vol["mount_point"]
+#    end
+#    action      [:mount, :enable]
+#  end
+#end
+
+mount "/media/HTPC" do
+  device      "/dev/sda3"
+  fstype      "ntfs"
+  not_if do
+    File.directory? "/media/HTPC"
   end
+  action      [:mount, :enable]
 end
-
-
 
 
 

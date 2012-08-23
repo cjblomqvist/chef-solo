@@ -18,14 +18,10 @@
 #
 
 node["volumes"].each do |vol_name, vol|
-  directory vol["mount_point"] do
-    recursive   true
-    owner       vol["owner"]
-    group       vol["group"]
-  end
   mount vol["mount_point"] do
     device      vol["device"]
     fstype      vol["fstype"]
+    fstype      vol["pass"]
     action      [:mount, :enable]
   end
 end

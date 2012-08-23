@@ -22,12 +22,9 @@
   , "volumes": {
         "HTPC": {
             "mount_point": "/media/HTPC"
-//          , "device": "/dev/sda3"
-          , "device": "0F8883092A40FD72"
-          , "device_type": "uuid"
+          , "device": "/dev/sda3"
           , "fstype": "ntfs"
-          , "owner": "xbmc"
-          , "group": "xbmc"
+          , "pass": 0
         }
     }
   , "run_list": [

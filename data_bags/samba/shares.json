@@ -12,5 +12,9 @@
             "copy": "web"
           , "path": "/media/HTPC/downloads"
         }
+      , "test": {
+            "copy": "web"
+          , "path": "/var/chef-solo"
+        }
     }
 }

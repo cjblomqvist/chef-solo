@@ -45,3 +45,22 @@ ppa "chris-lea/node.js"
 package "nodejs"
 package "npm"
 
+# ==============================================================
+# Install MongoDB
+# ==============================================================
+
+# Add repository
+apt_repository "mongodb" do
+  uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
+  distribution "dist"
+  components ["10gen"]
+  keyserver "keyserver.ubuntu.com"
+  key "7F0CEB10"
+  action :add
+end
+
+package "mongodb-10gen"
+
+service "mongo"
+  action :start :enable
+end

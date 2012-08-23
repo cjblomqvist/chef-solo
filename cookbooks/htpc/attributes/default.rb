@@ -17,4 +17,7 @@
 # limitations under the License.
 #
 
-### default['webmin']['compiletime'] = false
+# XBMC Sources
+["programs", "video", "music", "pictures", "files"].each do |name|
+  default['xbmc']['sources'][name] = Hash.new
+end

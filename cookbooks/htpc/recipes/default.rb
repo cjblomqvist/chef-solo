@@ -37,12 +37,12 @@ end
 # ==============================================================
 
 # Add package to make sure add-apt-repository exists
-package python-software-properties
+package "python-software-properties"
 
 # Add repository for node
 ppa "chris-lea/node.js"
 
-package nodejs
-package npm
+package "nodejs"
+package "npm"
 
 

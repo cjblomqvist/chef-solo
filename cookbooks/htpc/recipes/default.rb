@@ -62,6 +62,7 @@ end
 package "mongodb-10gen"
 
 service "mongodb" do
+  provider Chef::Provider::Service::Upstart
   action [:start, :enable]
 end
 

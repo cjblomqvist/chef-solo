@@ -53,12 +53,3 @@
       , "recipe[transmission]"
     ]
 }
-
-
-
-<%- node["xbmc"]["sources"]["music"].each do |name, path| %>
-        <source>
-            <name><%= name %>Music</name>
-            <path pathversion="1"><%= path %></path>
-        </source>
-        <%- end %>

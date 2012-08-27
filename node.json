@@ -59,16 +59,16 @@
       , "group": "xbmc"
       , "directory": "/home/xbmc/.flexget"
       , "config": {
-            "feeds": {
+            "tasks": {
                 "tv-shows": {
                     "transmission": {
                         "host": "localhost"
-                      , "post": 9091
+                      , "port": 9091
                       , "removewhendone": true
                       , "username": "xbmc"
                       , "password": "detvarkul"
                       , "ratio": 5.0
-                      , "addpaused": "No"
+                      , "addpaused": false
                     }
                   , "regexp": {
                         "accept": [

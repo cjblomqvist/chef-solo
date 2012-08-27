@@ -101,6 +101,11 @@ execute "pip" do
   command "pip install flexget"
 end
 
+# Install Transmission-RPC using pip
+execute "pip" do
+  command "pip install transmissionrpc"
+end
+
 # Setup the config file
 ## First, setup the directory where to put it
 directory node["flexget"]["directory"] do
@@ -118,6 +123,6 @@ end
 
 ## Then setup cron job for FlexGet 
 crontab "flexget-crontab" do 
-  username :root 
+  username node["flexget"]["owner"]
   filename "crontab.erb"
 end
